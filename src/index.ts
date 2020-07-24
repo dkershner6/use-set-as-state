@@ -1,1 +1,3 @@
-export { default as twoPlusTwo } from './lib';
+import useSetAsState from './lib';
+
+export default useSetAsState;

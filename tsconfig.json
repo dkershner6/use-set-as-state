@@ -24,6 +24,7 @@
     "**/*.test.tsx",
     "coverage",
     "jest.config.js",
-    "demo-site"
+    "demo-site",
+    "**/__test__/**/*.tsx"
   ]
 }

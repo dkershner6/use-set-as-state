@@ -1,7 +1,7 @@
 {
-  "name": "npm-typescript-package-template",
-  "version": "0.0.0",
-  "description": "A template for easy creation of new NPM packages",
+  "name": "use-set-as-state",
+  "version": "1.0.0",
+  "description": "React Hook to use a native JS Set as State, maintaining the interface entirely, and properly handling re-rendering. Uses Immer under the hood.",
   "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && tsc",
@@ -14,27 +14,42 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dkershner6/npm-typescript-package-template.git"
+    "url": "git+https://github.com/dkershner6/use-set-as-state.git"
   },
-  "keywords": [],
+  "keywords": [
+    "immer",
+    "react",
+    "react-hooks",
+    "hook",
+    "set",
+    "useSetAsState"
+  ],
   "author": "Derek Kershner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dkershner6/npm-typescript-package-template/issues"
+    "url": "https://github.com/dkershner6/use-set-as-state/issues"
   },
-  "homepage": "https://github.com/dkershner6/npm-typescript-package-template#readme",
+  "homepage": "https://github.com/dkershner6/use-set-as-state#readme",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.4.7",
     "@types/jest": "^26.0.4",
     "@types/node": "^14.0.22",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
     "@typescript-eslint/parser": "^3.6.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.4.0",
-    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-jest": "^23.18.0",
-    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "eslint-plugin-testing-library": "^3.3.1",
+    "immer": "^7.0.6",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.1.1",
     "ts-node": "^8.10.2",
@@ -43,5 +58,11 @@
   "files": [
     "dist/*"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "use-immer-produce": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "immer": ">=6.0.0"
+  }
 }
