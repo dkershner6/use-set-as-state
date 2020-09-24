@@ -1,10 +1,10 @@
 {
   "name": "use-set-as-state",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Hook to use a native JS Set as State, maintaining the interface entirely, and properly handling re-rendering. Uses Immer under the hood.",
   "main": "dist/index.js",
   "source": "src/index.ts",
-  "module": "dist/index.mjs",
+  "module": "dist/index.m.js",
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "scripts": {
