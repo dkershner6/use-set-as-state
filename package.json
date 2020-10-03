@@ -1,6 +1,6 @@
 {
   "name": "use-set-as-state",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "React Hook to use a native JS Set as State, maintaining the interface entirely, and properly handling re-rendering. Uses Immer under the hood.",
   "main": "dist/index.js",
   "source": "src/index.ts",
@@ -8,7 +8,7 @@
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rimraf dist && microbundle --external react --globals react=React --strict --no-compress",
+    "build": "rimraf dist && microbundle --strict --no-compress",
     "format-check": "prettier --check .",
     "format": "prettier --write .",
     "test": "jest --coverage --passWithNoTests",
@@ -64,7 +64,7 @@
     "dist/*"
   ],
   "dependencies": {
-    "use-immer-produce": "^1.0.0"
+    "use-immer-produce": "^1.0.4"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
