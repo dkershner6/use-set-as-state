@@ -15,7 +15,7 @@ npm i use-set-as-state immer
 ## Usage
 
 ```typescript
-import useSetAsState from 'use-set-as-state';
+import { useSetAsState } from 'use-set-as-state';
 
 const FunctionComponent = () => {
     const theSet = useSetAsState(new Set());
