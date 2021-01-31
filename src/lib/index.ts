@@ -1,5 +1,5 @@
 import { enableMapSet } from 'immer';
-import useImmerProduce from 'use-immer-produce';
+import { useImmerProduce } from 'use-immer-produce';
 
 enableMapSet();
 
