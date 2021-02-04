@@ -5,7 +5,7 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
-    "build": "rimraf dist && microbundle --strict --no-compress",
+    "build": "rimraf dist && tsc && tsc -p tsconfig.esm.json",
     "format-check": "prettier --check .",
     "format": "prettier --write .",
     "test": "jest --coverage --passWithNoTests",
