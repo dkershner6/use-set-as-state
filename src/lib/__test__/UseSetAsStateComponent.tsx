@@ -9,7 +9,7 @@ export const UseSetAsStateComponent = ({
     onInputAdd
 }: ISetAsStateComponent): ReactElement => {
     const [textValue, setTextValue] = useState('test2');
-    const setAsState = useSetAsState(new Set(['test', 'test1']));
+    const setAsState = useSetAsState(() => new Set(['test', 'test1']));
 
     const generateItems = (number: number): string[] => {
         const result = [];
