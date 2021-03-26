@@ -7,9 +7,10 @@ enableMapSet();
  * The returned object can be used exactly like a @see Set , maintaining the complete interface.
  * The difference is that the set will be held in state and properly re-render components as required.
  * There are also a few methods added for re-rendering performance reasons.
- * @param initialSet
+ *
+ * @param initialSet Can be a @see Set or an initialization function that returns a Set.
  */
-const useSetAsState = <T>(initialSet: Set<T>): Set<T> => {
+const useSetAsState = <T>(initialSet: Set<T> | (() => Set<T>)): Set<T> => {
     const [theSet, updateTheSet] = useImmerProduce(initialSet);
 
     const setAsState: Set<T> = {
