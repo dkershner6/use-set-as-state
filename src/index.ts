@@ -1,4 +1,5 @@
-import useSetAsState from './lib';
-
-export { useSetAsState };
-export default useSetAsState;
+export class Hello {
+  public sayHello() {
+    return 'hello, world!';
+  }
+}
