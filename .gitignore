@@ -41,11 +41,15 @@ junit.xml
 !/.mergify.yml
 !/.github/workflows/upgrade-main.yml
 !/.github/pull_request_template.md
+!/.prettierignore
+!/.prettierrc.json
 !/.npmrc
 !/test/
+!/tsconfig.publish.json
 !/tsconfig.json
-!/tsconfig.dev.json
 !/src/
 /lib
 /dist/
 !/.eslintrc.json
+!/.nvmrc
+!/.github/CODEOWNERS
