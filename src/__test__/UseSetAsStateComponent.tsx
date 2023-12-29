@@ -1,15 +1,15 @@
-import React, { useState, ReactElement } from 'react';
-import useSetAsState from '..';
+import React, { useState, ReactElement } from "react";
+import { useSetAsState } from "..";
 
 interface ISetAsStateComponent {
     onInputAdd?: (added: boolean) => void;
 }
 
 export const UseSetAsStateComponent = ({
-    onInputAdd
+    onInputAdd,
 }: ISetAsStateComponent): ReactElement => {
-    const [textValue, setTextValue] = useState('test2');
-    const setAsState = useSetAsState(() => new Set(['test', 'test1']));
+    const [textValue, setTextValue] = useState("test2");
+    const setAsState = useSetAsState(() => new Set(["test", "test1"]));
 
     const generateItems = (number: number): string[] => {
         const result = [];
@@ -36,7 +36,7 @@ export const UseSetAsStateComponent = ({
 
     return (
         <>
-            <div className="container" style={{ display: 'flex' }}>
+            <div className="container" style={{ display: "flex" }}>
                 <button
                     data-testid="AddItemsBulkButton"
                     onClick={() => handleAddABunch(50)}
@@ -59,12 +59,12 @@ export const UseSetAsStateComponent = ({
             <div data-testid="ButtonCount">
                 There are {setAsState.size} Buttons
             </div>
-            {setAsState.has('test') && (
+            {setAsState.has("test") && (
                 <div data-testid="IDCheck">There is a test button</div>
             )}
             <div
                 className="container"
-                style={{ display: 'flex', marginTop: '15px' }}
+                style={{ display: "flex", marginTop: "15px" }}
             >
                 <input
                     type="text"
@@ -79,7 +79,7 @@ export const UseSetAsStateComponent = ({
                     Add
                 </button>
             </div>
-            <div className="container" style={{ marginTop: '15px' }}>
+            <div className="container" style={{ marginTop: "15px" }}>
                 <p>Click the Buttons themselves to delete one by one.</p>
                 {[...setAsState.keys()].map((aString) => (
                     <div key={aString}>
