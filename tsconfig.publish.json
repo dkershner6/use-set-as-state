@@ -40,6 +40,10 @@
   ],
   "exclude": [
     "src/**/*.test.ts",
-    "**/__test__/**/*"
+    "src/**/*.spec.ts",
+    "**/__tests__/**/*",
+    "**/__mocks__/**/*",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.tsx"
   ]
 }
