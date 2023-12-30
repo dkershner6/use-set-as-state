@@ -9,6 +9,7 @@
     ".github/workflows/release.yml",
     ".github/workflows/upgrade-main.yml",
     ".gitignore",
+    ".jest/setup-jsdom.ts",
     ".mergify.yml",
     ".npmignore",
     ".npmrc",
