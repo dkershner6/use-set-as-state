@@ -14,7 +14,6 @@
     "sonarjs",
     "react",
     "react-hooks",
-    "jest-dom",
     "jsx-a11y"
   ],
   "parser": "@typescript-eslint/parser",
@@ -30,7 +29,6 @@
     "plugin:sonarjs/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:jest-dom/recommended",
     "plugin:jsx-a11y/recommended"
   ],
   "settings": {
@@ -191,6 +189,24 @@
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-var-requires": "off"
       }
+    },
+    {
+      "files": [
+        "**/__test__/**/*.[jt]s",
+        "**/__test__/**/*.[jt]sx",
+        "*.spec.[jt]s",
+        "*.test.[jt]s",
+        "*.spec.[jt]sx",
+        "*.test.[jt]sx"
+      ],
+      "plugins": [
+        "jest-dom",
+        "testing-library"
+      ],
+      "extends": [
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended"
+      ]
     },
     {
       "files": [
