@@ -2,14 +2,20 @@
 {
   "env": {
     "jest": true,
-    "node": true
+    "node": true,
+    "browser": true,
+    "es6": true
   },
   "root": true,
   "plugins": [
     "@typescript-eslint",
     "import",
     "jest",
-    "sonarjs"
+    "sonarjs",
+    "react",
+    "react-hooks",
+    "jest-dom",
+    "jsx-a11y"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -21,7 +27,11 @@
     "plugin:import/typescript",
     "plugin:prettier/recommended",
     "plugin:jest/recommended",
-    "plugin:sonarjs/recommended"
+    "plugin:sonarjs/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:jsx-a11y/recommended"
   ],
   "settings": {
     "import/parsers": {
@@ -36,6 +46,10 @@
         "project": "./tsconfig.json",
         "alwaysTryTypes": true
       }
+    },
+    "react": {
+      "pragma": "React",
+      "version": "detect"
     }
   },
   "ignorePatterns": [
@@ -162,7 +176,8 @@
       {
         "ignoreRestSiblings": true
       }
-    ]
+    ],
+    "react/prop-types": 0
   },
   "overrides": [
     {

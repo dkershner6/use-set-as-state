@@ -51,5 +51,6 @@ junit.xml
 /lib
 /dist/
 !/.eslintrc.json
+!/.jest/setup-jsdom.ts
 !/.nvmrc
 !/.github/CODEOWNERS
