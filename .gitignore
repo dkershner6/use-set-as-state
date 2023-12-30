@@ -51,6 +51,6 @@ junit.xml
 /lib
 /dist/
 !/.eslintrc.json
-!/.jest/setup-jsdom.ts
+!/.jest/setup-extend-expect.ts
 !/.nvmrc
 !/.github/CODEOWNERS

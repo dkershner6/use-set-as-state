@@ -9,6 +9,10 @@
       "type": "build"
     },
     {
+      "name": "@testing-library/user-event",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -85,6 +89,10 @@
       "type": "build"
     },
     {
+      "name": "eslint-plugin-testing-library",
+      "type": "build"
+    },
+    {
       "name": "eslint",
       "version": "^8",
       "type": "build"
@@ -95,6 +103,10 @@
     },
     {
       "name": "jest",
+      "type": "build"
+    },
+    {
+      "name": "jest-axe",
       "type": "build"
     },
     {

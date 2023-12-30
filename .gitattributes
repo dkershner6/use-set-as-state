@@ -10,7 +10,7 @@
 /.github/workflows/release.yml linguist-generated
 /.github/workflows/upgrade-main.yml linguist-generated
 /.gitignore linguist-generated
-/.jest/setup-jsdom.ts linguist-generated
+/.jest/setup-extend-expect.ts linguist-generated
 /.mergify.yml linguist-generated
 /.npmignore linguist-generated
 /.npmrc linguist-generated

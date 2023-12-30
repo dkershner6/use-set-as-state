@@ -1,11 +1,10 @@
-import { render, cleanup, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import React from "react";
-import "@testing-library/jest-dom";
+
 import UseSetAsStateComponent from "./UseSetAsStateComponent";
 
 describe("useSetAsState", () => {
     afterEach(() => {
-        cleanup();
         jest.clearAllMocks();
     });
 
@@ -16,121 +15,107 @@ describe("useSetAsState", () => {
     });
 
     it("Should initially render with 2 items in the Set", () => {
-        const { queryAllByTestId } = render(<UseSetAsStateComponent />);
+        render(<UseSetAsStateComponent />);
 
-        const listItems = queryAllByTestId(/ListItem/);
+        const listItems = screen.queryAllByTestId(/ListItem/);
         expect(listItems).toHaveLength(2);
     });
 
     it("Should match Button count and actual count", () => {
-        const { getByTestId, queryAllByTestId } = render(
-            <UseSetAsStateComponent />,
-        );
+        render(<UseSetAsStateComponent />);
 
-        const listItems = queryAllByTestId(/ListItem/);
+        const listItems = screen.queryAllByTestId(/ListItem/);
         expect(listItems).toHaveLength(2);
 
-        expect(getByTestId("ButtonCount").innerHTML).toEqual(
+        expect(screen.getByTestId("ButtonCount").innerHTML).toEqual(
             "There are 2 Buttons",
         );
     });
 
     it("Should find the test button initially", () => {
-        const { getByTestId } = render(<UseSetAsStateComponent />);
+        render(<UseSetAsStateComponent />);
 
-        expect(getByTestId("IDCheck")).toBeInTheDocument();
+        expect(screen.getByTestId("IDCheck")).toBeInTheDocument();
     });
 
     it("Should add a third item when Add is clicked", () => {
-        const { getByTestId, queryAllByTestId } = render(
-            <UseSetAsStateComponent />,
-        );
+        render(<UseSetAsStateComponent />);
 
-        const addButton = getByTestId("AddButton");
+        const addButton = screen.getByTestId("AddButton");
         fireEvent.click(addButton);
 
-        const listItems = queryAllByTestId(/ListItem/);
+        const listItems = screen.queryAllByTestId(/ListItem/);
         expect(listItems).toHaveLength(3);
     });
 
     it("Should delete an item when clicked", () => {
-        const { getByTestId, queryAllByTestId } = render(
-            <UseSetAsStateComponent />,
-        );
+        render(<UseSetAsStateComponent />);
 
-        const listItem = getByTestId("ListItem-test");
+        const listItem = screen.getByTestId("ListItem-test");
         fireEvent.click(listItem);
 
-        const listItems = queryAllByTestId("ListItem-test");
+        const listItems = screen.queryAllByTestId("ListItem-test");
         expect(listItems).toHaveLength(0);
     });
 
     it("Should clear all items when ClearButton is clicked", () => {
-        const { queryAllByTestId, getByTestId } = render(
-            <UseSetAsStateComponent />,
-        );
+        render(<UseSetAsStateComponent />);
 
-        const listItems = queryAllByTestId(/ListItem/);
+        const listItems = screen.queryAllByTestId(/ListItem/);
         expect(listItems).toHaveLength(2);
 
-        const clearButton = getByTestId("ClearButton");
+        const clearButton = screen.getByTestId("ClearButton");
         fireEvent.click(clearButton);
 
-        const afterClickListItems = queryAllByTestId(/ListItem/);
+        const afterClickListItems = screen.queryAllByTestId(/ListItem/);
         expect(afterClickListItems).toHaveLength(0);
     });
 
     it("Should load a bunch of items at once when AddBulk is clicked", () => {
-        const { queryAllByTestId, getByTestId } = render(
-            <UseSetAsStateComponent />,
-        );
+        render(<UseSetAsStateComponent />);
 
-        const listItems = queryAllByTestId(/ListItem/);
+        const listItems = screen.queryAllByTestId(/ListItem/);
         expect(listItems).toHaveLength(2);
 
-        const addBulkButton = getByTestId("AddItemsBulkButton");
+        const addBulkButton = screen.getByTestId("AddItemsBulkButton");
         fireEvent.click(addBulkButton);
 
-        const afterClickListItems = queryAllByTestId(/ListItem/);
+        const afterClickListItems = screen.queryAllByTestId(/ListItem/);
         expect(afterClickListItems).toHaveLength(52);
     });
 
     it("Should load a bunch of items at once when AddBulk is clicked, then delete them when DeleteBulk is clicked", () => {
-        const { queryAllByTestId, getByTestId } = render(
-            <UseSetAsStateComponent />,
-        );
+        render(<UseSetAsStateComponent />);
 
-        const listItems = queryAllByTestId(/ListItem/);
+        const listItems = screen.queryAllByTestId(/ListItem/);
         expect(listItems).toHaveLength(2);
 
-        const addBulkButton = getByTestId("AddItemsBulkButton");
+        const addBulkButton = screen.getByTestId("AddItemsBulkButton");
         fireEvent.click(addBulkButton);
 
-        const afterClickListItems = queryAllByTestId(/ListItem/);
+        const afterClickListItems = screen.queryAllByTestId(/ListItem/);
         expect(afterClickListItems).toHaveLength(52);
 
-        const deleteBulkButton = getByTestId("DeleteItemsBulkButton");
+        const deleteBulkButton = screen.getByTestId("DeleteItemsBulkButton");
         fireEvent.click(deleteBulkButton);
 
-        const afterDeleteListItems = queryAllByTestId(/ListItem/);
+        const afterDeleteListItems = screen.queryAllByTestId(/ListItem/);
         expect(afterDeleteListItems).toHaveLength(2);
     });
 
     it("Should populate toString()", () => {
-        const { getByTestId } = render(<UseSetAsStateComponent />);
+        render(<UseSetAsStateComponent />);
 
-        expect(getByTestId("toStringCheck").innerHTML.length).toBeGreaterThan(
-            0,
-        );
+        expect(
+            screen.getByTestId("toStringCheck").innerHTML.length,
+        ).toBeGreaterThan(0);
     });
 
     it("Should return immediately with the new addition when added", () => {
         const onInputAdd = jest.fn();
-        const { getByTestId } = render(
-            <UseSetAsStateComponent onInputAdd={onInputAdd} />,
-        );
+        render(<UseSetAsStateComponent onInputAdd={onInputAdd} />);
 
-        const addButton = getByTestId("AddButton");
+        const addButton = screen.getByTestId("AddButton");
         fireEvent.click(addButton);
 
         expect(onInputAdd).toHaveBeenLastCalledWith(true); //True means the value was immediately present
