@@ -51,3 +51,4 @@ To use this repository:
 2. `pnpm i`
 3. `npx projen` (this will ensure everything is setup correctly, and you can run this command at any time)
 4. Good to make your changes!
+5. You can run `npx projen build` at any time to build the project.
