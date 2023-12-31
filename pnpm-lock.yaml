@@ -96,8 +96,8 @@ devDependencies:
     specifier: ^0.78.5
     version: 0.78.5(constructs@10.3.0)
   projen-nvm:
-    specifier: ^0.0.35
-    version: 0.0.35(constructs@10.3.0)(projen@0.78.5)
+    specifier: ^0.0.39
+    version: 0.0.39(constructs@10.3.0)(projen@0.78.5)
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -120,8 +120,8 @@ devDependencies:
     specifier: ^5.3.3
     version: 5.3.3
   use-immer-produce:
-    specifier: 1.1.1
-    version: 1.1.1(immer@10.0.3)(react@18.2.0)
+    specifier: 1.2.1
+    version: 1.2.1(immer@10.0.3)(react-dom@18.2.0)(react@18.2.0)
 
 packages:
 
@@ -4899,8 +4899,8 @@ packages:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
     dev: true
 
-  /projen-nvm@0.0.35(constructs@10.3.0)(projen@0.78.5):
-    resolution: {integrity: sha512-y5AleSq5qL0PAopr+0vDflU8sAoacAvqDRBwcWqOt+UWlYSpHBCTe1srvDbsEzf2ne7gslcRw+yrv+MpsuTwtA==}
+  /projen-nvm@0.0.39(constructs@10.3.0)(projen@0.78.5):
+    resolution: {integrity: sha512-aIv0tZsMBi1N9yEC9ZfBnSmR9YgMjlmfWz2/PHu/rvVU0DF6YC4CYQsqQHvKgesyK03RWcBtF1IjlfXf3Fw8Sw==}
     engines: {node: '>= 18.12.0 <= 20.10.0'}
     peerDependencies:
       constructs: ^10.3.0
@@ -5907,14 +5907,17 @@ packages:
       requires-port: 1.0.0
     dev: true
 
-  /use-immer-produce@1.1.1(immer@10.0.3)(react@18.2.0):
-    resolution: {integrity: sha512-MZ5nU9j+LZb6BYqLcxS9cXrbk10RY/5sgRRCT55ixVUne9/LJKO04WgYxX39XWo/LmjdVKz4JnCY5d9fuDgaMQ==}
+  /use-immer-produce@1.2.1(immer@10.0.3)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-2eDD3TrKOdAgAmfxFauOJ7yDeSMcOKpEkQ1HB4N0H+4nI7m1aZFdJOtOHqr7h5yx+zZFM97PIMs3ThQHlaq0Cg==}
+    engines: {node: '>= 18.12.0 <= 20.10.0'}
     peerDependencies:
-      immer: '>=6.0.0'
-      react: '>=16.9.0'
+      immer: ^10.0.3
+      react: ^18.2.0
+      react-dom: ^18.2.0
     dependencies:
       immer: 10.0.3
       react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: true
 
   /util-deprecate@1.0.2:
