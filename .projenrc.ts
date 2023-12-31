@@ -1,4 +1,4 @@
-import { Node20ReactTypeScriptProject } from "dkershner6-projen";
+import { Node20ReactTypeScriptProject } from "dkershner6-projen-react";
 import { TextFile } from "projen";
 import { Nvmrc } from "projen-nvm";
 
@@ -7,7 +7,7 @@ const PACKAGE_NAME = "use-set-as-state";
 const DEV_AND_PEER_DEPENDENCIES = ["immer", "use-immer-produce"];
 const DEV_DEPENDENCIES = [
     ...DEV_AND_PEER_DEPENDENCIES,
-    "dkershner6-projen",
+    "dkershner6-projen-react",
     "projen-nvm",
 ];
 const PEER_DEPENDENCIES = [...DEV_AND_PEER_DEPENDENCIES];
