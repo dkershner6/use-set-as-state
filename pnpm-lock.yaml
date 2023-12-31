@@ -35,9 +35,9 @@ devDependencies:
   constructs:
     specifier: ^10.0.0
     version: 10.3.0
-  dkershner6-projen:
-    specifier: ^0.0.26
-    version: 0.0.26(clone-deep@4.0.1)(constructs@10.3.0)(projen@0.78.5)
+  dkershner6-projen-react:
+    specifier: ^0.0.2
+    version: 0.0.2(clone-deep@4.0.1)(constructs@10.3.0)(dkershner6-projen-typescript@0.0.0)(projen@0.78.5)
   eslint:
     specifier: ^8
     version: 8.56.0
@@ -2257,8 +2257,23 @@ packages:
       path-type: 4.0.0
     dev: true
 
-  /dkershner6-projen@0.0.26(clone-deep@4.0.1)(constructs@10.3.0)(projen@0.78.5):
-    resolution: {integrity: sha512-BXejG+/kNfeC+yGoEOedbdLgdBd5o0VgtGmzny/WqqBOP87xMWrbMgdiXXhA+Qq9Jva0GiOjLrY58JFf+VQqlg==}
+  /dkershner6-projen-react@0.0.2(clone-deep@4.0.1)(constructs@10.3.0)(dkershner6-projen-typescript@0.0.0)(projen@0.78.5):
+    resolution: {integrity: sha512-jYDa6ntlRkV771sNtErcfxA2SbaUZAn3E/AbrrAE5POsmwe0ftqakS8Ta5RkC0LgknrGjLUufundinqZ4DUc1w==}
+    engines: {node: '>= 18.12.0 <= 20.10.0'}
+    peerDependencies:
+      clone-deep: ^4.0.1
+      constructs: ^10.3.0
+      dkershner6-projen-typescript: ^0.0.0
+      projen: ^0.78.5
+    dependencies:
+      clone-deep: 4.0.1
+      constructs: 10.3.0
+      dkershner6-projen-typescript: 0.0.0(clone-deep@4.0.1)(constructs@10.3.0)(projen@0.78.5)
+      projen: 0.78.5(constructs@10.3.0)
+    dev: true
+
+  /dkershner6-projen-typescript@0.0.0(clone-deep@4.0.1)(constructs@10.3.0)(projen@0.78.5):
+    resolution: {integrity: sha512-KZfajhIwkN0ynDwhSVGoCeB/CfvPaRGBaUeHsaSqbACGsVTSJjTysOPLOcAxD0Amvqok825WPmixCKj3eSxNzg==}
     engines: {node: '>= 18.12.0 <= 20.10.0'}
     peerDependencies:
       clone-deep: ^4.0.1

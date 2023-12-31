@@ -44,7 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^6",
     "@typescript-eslint/parser": "^6",
     "constructs": "^10.0.0",
-    "dkershner6-projen": "^0.0.26",
+    "dkershner6-projen-react": "^0.0.2",
     "eslint": "^8",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",

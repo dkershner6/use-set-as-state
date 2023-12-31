@@ -256,13 +256,13 @@
       },
       "steps": [
         {
-          "exec": "pnpx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@testing-library/jest-dom,@testing-library/react,@testing-library/user-event,@types/jest,@types/node,@types/react,@types/react-dom,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,dkershner6-projen,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-jest,eslint-plugin-jest-dom,eslint-plugin-jsx-a11y,eslint-plugin-prettier,eslint-plugin-react,eslint-plugin-react-hooks,eslint-plugin-sonarjs,eslint-plugin-testing-library,eslint,immer,jest,jest-axe,jest-environment-jsdom,jest-junit,prettier,projen,projen-nvm,react,react-dom,standard-version,ts-jest,ts-node,typedoc,typescript,use-immer-produce"
+          "exec": "pnpx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@testing-library/jest-dom,@testing-library/react,@testing-library/user-event,@types/jest,@types/node,@types/react,@types/react-dom,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,dkershner6-projen-react,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-jest,eslint-plugin-jest-dom,eslint-plugin-jsx-a11y,eslint-plugin-prettier,eslint-plugin-react,eslint-plugin-react-hooks,eslint-plugin-sonarjs,eslint-plugin-testing-library,eslint,immer,jest,jest-axe,jest-environment-jsdom,jest-junit,prettier,projen,projen-nvm,react,react-dom,standard-version,ts-jest,ts-node,typedoc,typescript,use-immer-produce"
         },
         {
           "exec": "pnpm i --no-frozen-lockfile"
         },
         {
-          "exec": "pnpm update @testing-library/jest-dom @testing-library/react @testing-library/user-event @types/jest @types/node @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs dkershner6-projen eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-jest eslint-plugin-jest-dom eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sonarjs eslint-plugin-testing-library eslint immer jest jest-axe jest-environment-jsdom jest-junit prettier projen projen-nvm react react-dom standard-version ts-jest ts-node typedoc typescript use-immer-produce"
+          "exec": "pnpm update @testing-library/jest-dom @testing-library/react @testing-library/user-event @types/jest @types/node @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs dkershner6-projen-react eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-jest eslint-plugin-jest-dom eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sonarjs eslint-plugin-testing-library eslint immer jest jest-axe jest-environment-jsdom jest-junit prettier projen projen-nvm react react-dom standard-version ts-jest ts-node typedoc typescript use-immer-produce"
         },
         {
           "exec": "npx projen"
