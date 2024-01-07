@@ -41,6 +41,14 @@
       ],
       "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
     },
+    "ci": {
+      "name": "ci",
+      "steps": [
+        {
+          "spawn": "install:ci"
+        }
+      ]
+    },
     "clobber": {
       "name": "clobber",
       "description": "hard resets to HEAD of origin and cleans the local repo",
@@ -117,7 +125,18 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools projenrc .projenrc.ts"
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
+          "args": [
+            "--max-warnings=0"
+          ]
+        }
+      ]
+    },
+    "i": {
+      "name": "i",
+      "steps": [
+        {
+          "spawn": "install"
         }
       ]
     },
@@ -207,11 +226,22 @@
       "description": "Run tests",
       "steps": [
         {
-          "exec": "jest --passWithNoTests --coverageProvider=v8 --updateSnapshot",
-          "receiveArgs": true
+          "spawn": "eslint"
         },
         {
-          "spawn": "eslint"
+          "spawn": "type-check"
+        },
+        {
+          "spawn": "test-unit"
+        }
+      ]
+    },
+    "test-unit": {
+      "name": "test-unit",
+      "steps": [
+        {
+          "exec": "jest --passWithNoTests --coverageProvider=v8 --updateSnapshot",
+          "receiveArgs": true
         }
       ]
     },
@@ -256,13 +286,13 @@
       },
       "steps": [
         {
-          "exec": "pnpx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@testing-library/jest-dom,@testing-library/react,@testing-library/user-event,@types/jest,@types/node,@types/react,@types/react-dom,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,dkershner6-projen-react,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-jest,eslint-plugin-jest-dom,eslint-plugin-jsx-a11y,eslint-plugin-prettier,eslint-plugin-react,eslint-plugin-react-hooks,eslint-plugin-sonarjs,eslint-plugin-testing-library,eslint,immer,jest,jest-axe,jest-environment-jsdom,jest-junit,prettier,projen,projen-nvm,react,react-dom,standard-version,ts-jest,ts-node,typedoc,typescript,use-immer-produce"
+          "exec": "pnpx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@testing-library/jest-dom,@testing-library/react,@testing-library/user-event,@types/clone-deep,@types/jest,@types/node,@types/react,@types/react-dom,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,clone-deep,constructs,dkershner6-projen-react,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-jest,eslint-plugin-jest-dom,eslint-plugin-jsx-a11y,eslint-plugin-prettier,eslint-plugin-react,eslint-plugin-react-hooks,eslint-plugin-sonarjs,eslint-plugin-testing-library,eslint,immer,jest,jest-axe,jest-environment-jsdom,jest-junit,prettier,projen,projen-nvm,react,react-dom,standard-version,ts-jest,ts-node,typedoc,typescript,use-immer-produce"
         },
         {
           "exec": "pnpm i --no-frozen-lockfile"
         },
         {
-          "exec": "pnpm update @testing-library/jest-dom @testing-library/react @testing-library/user-event @types/jest @types/node @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs dkershner6-projen-react eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-jest eslint-plugin-jest-dom eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sonarjs eslint-plugin-testing-library eslint immer jest jest-axe jest-environment-jsdom jest-junit prettier projen projen-nvm react react-dom standard-version ts-jest ts-node typedoc typescript use-immer-produce"
+          "exec": "pnpm update @testing-library/jest-dom @testing-library/react @testing-library/user-event @types/clone-deep @types/jest @types/node @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser clone-deep constructs dkershner6-projen-react eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-jest eslint-plugin-jest-dom eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sonarjs eslint-plugin-testing-library eslint immer jest jest-axe jest-environment-jsdom jest-junit prettier projen projen-nvm react react-dom standard-version ts-jest ts-node typedoc typescript use-immer-produce"
         },
         {
           "exec": "npx projen"
@@ -277,7 +307,7 @@
       "description": "Watch & compile in the background",
       "steps": [
         {
-          "exec": "tsc --build -w"
+          "exec": "tsc --build -w tsconfig.publish.json"
         }
       ]
     }
