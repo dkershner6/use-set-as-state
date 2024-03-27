@@ -49,6 +49,7 @@ junit.xml
 /lib
 /dist/
 !/.eslintrc.json
+.DS_Store
 !/.jest/setup-extend-expect.ts
 !/.nvmrc
 !/.github/CODEOWNERS
