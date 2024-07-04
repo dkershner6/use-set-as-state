@@ -24,6 +24,7 @@
   },
   "extends": [
     "plugin:import/typescript",
+    "plugin:prettier/recommended",
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -31,8 +32,7 @@
     "plugin:sonarjs/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended"
+    "plugin:jsx-a11y/recommended"
   ],
   "settings": {
     "import/parsers": {
